@@ -5,7 +5,6 @@ const {
   window;
 registerPlugin(MorphSVGPlugin);
 
-// Used to calculate distance of "tug"
 let startX;
 let startY;
 
