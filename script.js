@@ -23,7 +23,6 @@ const HIT = document.querySelector('.toggle-scene__hit-spot');
 const DUMMY = document.querySelector('.toggle-scene__dummy-cord');
 const DUMMY_CORD = document.querySelector('.toggle-scene__dummy-cord line');
 const PROXY = document.createElement('div');
-// set init position
 const ENDX = DUMMY_CORD.getAttribute('x2');
 const ENDY = DUMMY_CORD.getAttribute('y2');
 const RESET = () => {
