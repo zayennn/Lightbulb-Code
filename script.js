@@ -2,7 +2,7 @@ const {
   gsap: { registerPlugin, set, to, timeline },
   MorphSVGPlugin,
   Draggable } =
-window;
+  window;
 registerPlugin(MorphSVGPlugin);
 
 // Used to calculate distance of "tug"
@@ -10,10 +10,12 @@ let startX;
 let startY;
 
 const AUDIO = {
-  CLICK: new Audio('https://assets.codepen.io/605876/click.mp3') };
+  CLICK: new Audio('https://assets.codepen.io/605876/click.mp3')
+};
 
 const STATE = {
-  ON: false };
+  ON: false
+};
 
 const CORD_DURATION = 0.1;
 
@@ -28,7 +30,8 @@ const ENDY = DUMMY_CORD.getAttribute('y2');
 const RESET = () => {
   set(PROXY, {
     x: ENDX,
-    y: ENDY });
+    y: ENDY
+  });
 
 };
 
@@ -47,16 +50,18 @@ const CORD_TL = timeline({
     set([DUMMY, HIT], { display: 'block' });
     set(CORDS[0], { display: 'none' });
     RESET();
-  } });
+  }
+});
 
 
 for (let i = 1; i < CORDS.length; i++) {
   CORD_TL.add(
-  to(CORDS[0], {
-    morphSVG: CORDS[i],
-    duration: CORD_DURATION,
-    repeat: 1,
-    yoyo: true }));
+    to(CORDS[0], {
+      morphSVG: CORDS[i],
+      duration: CORD_DURATION,
+      repeat: 1,
+      yoyo: true
+    }));
 
 
 }
@@ -72,7 +77,9 @@ Draggable.create(PROXY, {
     set(DUMMY_CORD, {
       attr: {
         x2: this.x,
-        y2: this.y } });
+        y2: this.y
+      }
+    });
 
 
   },
@@ -89,6 +96,8 @@ Draggable.create(PROXY, {
         } else {
           RESET();
         }
-      } });
+      }
+    });
 
-  } });
+  }
+});
